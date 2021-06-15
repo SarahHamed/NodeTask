@@ -1,0 +1,26 @@
+{{>header}}
+{{>navbar}}
+<h4 class="text-center m-5">Show All Tasks</h4>
+<table class="table table-striped container ">
+    <thead>
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Status</th>
+    <th>Delete</th>
+    <th>Edit</th>
+  </tr>
+  </thead>
+{{#each allTasks}}
+<tr>
+    <td>{{this.id}}</td>
+    <td>{{this.title}}</td>
+    <td>{{this.content}}</td>
+    <td>{{this.status}}</td>
+    <td><a class="btn btn-sm btn-dark" href="/delete/{{this.id}}">delete</a></td>
+    <td><a class="btn btn-sm btn-secondary px-3" href="/edit/{{this.id}}">edit</a></td>
+</tr>
+{{/each}}
+</table>
+{{>footer}}

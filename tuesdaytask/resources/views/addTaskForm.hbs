@@ -1,0 +1,28 @@
+{{>header}}
+{{>navbar}}
+<div class="container my-3">
+<form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Title</label>
+    <input type="text" class="form-control" name="title" value={{taskTitle}}>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">content</label>
+    <input type="text" class="form-control" name="content" value={{taskContent}}>
+  </div>
+  <div class="mb-3">
+    <select class="form-select" aria-label="Default select example" name="status">
+    <option selected>Status</option>
+    <option value="pending">pending</option>
+    <option value="progress">in progress</option>
+    <option value="solved">solved</option>
+    </select>
+  </div>
+  {{#if editFlag}}
+    <button type="submit" class="btn btn-primary">Edit Task</button>
+  {{else}}
+  <button type="submit" class="btn btn-primary">Add Task</button>
+  {{/if}}
+</form>
+</div>
+{{>footer}}
