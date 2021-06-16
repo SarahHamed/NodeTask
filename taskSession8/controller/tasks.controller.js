@@ -81,6 +81,7 @@ const editTask = (req, res)=>{
     id = req.params.id
     const allTasks = taskHelper.readData()
     index=allTasks.findIndex(task=> task.id == id)
+    let record = allTasks[index]
    // console.log(Object.keys(req.query).length)
     if(Object.keys(req.query).length != 0){
           if(req.query.title == '') data.errors.push('invalid title')
@@ -95,13 +96,13 @@ const editTask = (req, res)=>{
           else{
               // res.redirect(`/showSingle/${id}?success=false`)
                 data.errorStatus=true
+                data.myData=record
                 res.render('edit', data)
           }
 
           if(data.errors.length ==0)  res.redirect(`/showSingle/${id}?success=true`)
       }
       else{
-            let record = allTasks[index]
             console.log(Object.keys(req.query))
             data.myData=record
             res.render('edit', data)
