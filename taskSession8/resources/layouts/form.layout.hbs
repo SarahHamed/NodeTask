@@ -1,0 +1,21 @@
+<section class="container my-4">
+    <form>
+        <div class="mb-3">
+            <input type="text" name="title" placeholder="task title" class="form-control" value={{myData.title}}>
+        </div>
+        <div class="mb-3">
+            <textarea placeholder="task content" name="content" class="form-control">{{myData.content}}</textarea>
+        </div>
+        <div class="mb-3">
+            {{#if myData.status}}
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="status" checked>
+            {{else}}
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="status">
+            {{/if}}
+            <label class="form-check-label" for="exampleCheck1">Task Status</label>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-success">Submit</button>
+        </div>
+    </form>
+</section>
